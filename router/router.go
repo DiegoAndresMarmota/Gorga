@@ -1,13 +1,14 @@
 package router
 
-import gin "github.com/gin-gonic/gin"
+import (
+	gin "github.com/gin-gonic/gin"
+)
 
 func InitRoute() {
+
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+
+	categoryRoutes(r)
+
 	r.Run() // listen and serve on 0.0.0.0:8080
 }
